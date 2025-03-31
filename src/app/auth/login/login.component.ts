@@ -1,6 +1,6 @@
 import {Component, inject, signal} from '@angular/core';
 import {FormBuilder, ReactiveFormsModule, UntypedFormGroup, Validators} from '@angular/forms';
-import {Router, RouterLink} from '@angular/router';
+import {Router, RouterModule} from '@angular/router';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
@@ -16,7 +16,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatIconModule,
     MatButtonModule,
     MatCheckboxModule,
-    RouterLink
+    RouterModule
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
@@ -24,14 +24,13 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 export class LoginComponent {
   hide = signal<boolean>(true);
   loading = signal<boolean>(false);
-  private fb = inject(FormBuilder);
+  fb = inject(FormBuilder);
+  router = inject(Router);
   form: UntypedFormGroup = this.fb.group({
     email: [null, [Validators.required, Validators.email, Validators.maxLength(255)]],
     password: [null, [Validators.required, Validators.minLength(8)]],
     remember: [null]
   });
-
-  constructor(private readonly router: Router) {}
 
   onSubmit() {
     this.form!.markAllAsTouched();
