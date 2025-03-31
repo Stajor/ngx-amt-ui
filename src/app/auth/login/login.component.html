@@ -1,0 +1,36 @@
+<!-- login form -->
+<form class="my-10 space-y-6" [formGroup]="form!" (ngSubmit)="onSubmit()">
+  <div class="text-center">
+    <h2 class="text-foreground mb-1 text-3xl font-semibold" i18n="@@sign_in">Sign in</h2>
+    <p class="text-muted-foreground text-sm" i18n="@@enter_your_credential_to_access_your_account">
+       Enter your credential to access your account.
+    </p>
+  </div>
+
+  <div class="space-y-3 text-left">
+    <mat-form-field class="w-full">
+      <mat-label i18n="@@email">Email</mat-label>
+      <input matInput formControlName="email" type="email" placeholder="exmaple@email.com">
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label i18n="@@password">Password</mat-label>
+      <input matInput [type]="hide() ? 'password' : 'text'" formControlName="password">
+      <button mat-icon-button matSuffix (click)="hide.set(!hide())" type="button">
+        <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <div class="mb-2 flex items-center justify-between">
+    <mat-checkbox formControlName="remember">
+      <span class="text-muted-foreground" i18n="@@remember_me">Remember me</span>
+    </mat-checkbox>
+
+    <a routerLink="/auth/forgot-password" class="font-semibold text-primary text-sm" i18n="@@forgot_your_password">
+      Forgot your password?
+    </a>
+  </div>
+
+  <button mat-flat-button type="submit" class="w-full" [disabled]="loading()" i18n="@@submit">Submit</button>
+</form>
