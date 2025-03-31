@@ -1,6 +1,10 @@
 {
   "name": "amt-ui",
   "version": "0.0.1",
+  "description": "Angular material, tailwind template",
+  "author": "Stajor",
+  "license": "MIT",
+  "keywords": ["angular", "angular material", "tailwind"],
   "peerDependencies": {
     "@angular/common": "^19.0",
     "@angular/core": "^19.0",
