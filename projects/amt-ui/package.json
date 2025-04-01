@@ -1,10 +1,14 @@
 {
   "name": "amt-ui",
-  "version": "0.0.2",
+  "version": "0.0.7",
   "description": "Angular material, tailwind template",
   "author": "Stajor",
   "license": "MIT",
   "keywords": ["angular", "angular material", "tailwind"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Stajor/ngx-amt-ui.git"
+  },
   "peerDependencies": {
     "@angular/common": "^19.0",
     "@angular/core": "^19.0",
