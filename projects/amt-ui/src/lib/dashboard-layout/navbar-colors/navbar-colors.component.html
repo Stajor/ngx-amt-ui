@@ -1,0 +1,13 @@
+<button mat-icon-button [matMenuTriggerFor]="menuPalette">
+  <mat-icon class="text-muted-foreground/50">palette</mat-icon>
+</button>
+
+<mat-menu #menuPalette="matMenu">
+  @for (item of themeColors; track $index) {
+    <button mat-menu-item (click)="toggleThemeColor(item.name)">
+      <div class="flex">
+        <span [style.background]="item.code" class="me-1 h-5 w-5 rounded-full"></span>{{ item.name }}
+      </div>
+    </button>
+  }
+</mat-menu>
