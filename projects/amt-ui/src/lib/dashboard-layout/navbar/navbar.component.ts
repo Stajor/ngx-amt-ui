@@ -4,6 +4,7 @@ import {NavbarProfileComponent} from '../navbar-profile/navbar-profile.component
 import {NavbarLanguagesComponent} from '../navbar-languages/navbar-languages.component';
 import {NavbarThemeComponent} from '../navbar-theme/navbar-theme.component';
 import {NavbarColorsComponent} from '../navbar-colors/navbar-colors.component';
+import {NavbarFullscreenComponent} from '../navbar-fullscreen/navbar-fullscreen.component';
 
 @Component({
   selector: 'amt-navbar',
@@ -11,7 +12,8 @@ import {NavbarColorsComponent} from '../navbar-colors/navbar-colors.component';
     NavbarProfileComponent,
     NavbarLanguagesComponent,
     NavbarThemeComponent,
-    NavbarColorsComponent
+    NavbarColorsComponent,
+    NavbarFullscreenComponent
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
