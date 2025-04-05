@@ -14,3 +14,27 @@ export interface AmtSubMenuItem {
   active?: boolean;
   children?: Array<AmtSubMenuItem>;
 }
+
+export interface AmtProfile {
+  user: AmtProfileUser;
+  items: Array<AmtProfileItem>;
+}
+
+export interface AmtProfileUser {
+  email: string;
+  initials: string;
+  fullName: string;
+  photo?: string;
+}
+
+export interface AmtProfileItem {
+  label: string;
+  icon: string;
+  route?: string;
+  click?: () => void;
+}
+
+export interface AmtProfileLanguage {
+  title: string;
+  flagClass: string;
+}

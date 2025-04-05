@@ -1,15 +1,26 @@
 import {inject, Injectable, signal} from '@angular/core';
-import {AmtMenuItem, AmtSubMenuItem} from '../interfaces/amt-menu.interface';
+import {
+  AmtMenuItem,
+  AmtProfileItem,
+  AmtProfileLanguage,
+  AmtProfileUser,
+  AmtSubMenuItem
+} from '../interfaces/amt-menu.interface';
 import {Router} from '@angular/router';
+import {Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AmtMenuService {
-  showSideBar = signal(true);
-  pagesMenu = signal<AmtMenuItem[]>([]);
-  showMobileMenu = signal(false);
+  showSideBar     = signal(true);
+  pagesMenu       = signal<AmtMenuItem[]>([]);
+  showMobileMenu  = signal(false);
+  user            = signal<AmtProfileUser | null>(null);
+  profileMenu     = signal<AmtProfileItem[]>([]);
+  languages       = signal<AmtProfileLanguage[]>([]);
   router = inject(Router);
+  languageChanged$ = new Subject<AmtProfileLanguage>();
 
   public toggleSidebar() {
     this.showSideBar.set(!this.showSideBar());

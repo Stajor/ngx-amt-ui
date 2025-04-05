@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import {AmtMenuService} from '../../services/amt-menu.service';
 import {NavbarProfileComponent} from '../navbar-profile/navbar-profile.component';
+import {NavbarLanguagesComponent} from '../navbar-languages/navbar-languages.component';
 
 @Component({
   selector: 'amt-navbar',
   imports: [
-    NavbarProfileComponent
+    NavbarProfileComponent,
+    NavbarLanguagesComponent
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'

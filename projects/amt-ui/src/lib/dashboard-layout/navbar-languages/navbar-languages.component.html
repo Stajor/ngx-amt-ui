@@ -1,0 +1,15 @@
+<button mat-icon-button [matMenuTriggerFor]="menuLanguage">
+  <mat-icon class="text-muted-foreground/50">translate</mat-icon>
+</button>
+
+<mat-menu #menuLanguage="matMenu">
+  <div class="text-center font-semibold px-4 pb-2 text-muted-foreground" i18n="@@choose_language">
+    Choose Language
+  </div>
+  @for (language of amtMenuService.languages(); track language) {
+    <button mat-menu-item (click)="changeLanguage(language)">
+      <span class="rounded-full me-3 scale-150" [ngClass]="language.flagClass"></span>
+      <span>{{language.title}}</span>
+    </button>
+  }
+</mat-menu>

@@ -27,5 +27,19 @@ export class DashboardComponent {
 
   constructor() {
     this.menuService.pagesMenu.set(this.pages);
+    this.menuService.user.set({
+      email: 'user@email.com',
+      initials: 'JD',
+      fullName: 'John Doe',
+      photo: 'https://i.pravatar.cc/300'
+    });
+    this.menuService.profileMenu.set([
+      {label: 'Edit profile', icon: 'person_edit', click: () => alert('Edit profile')},
+      {label: 'Log out', icon: 'logout', click: () => alert('Logout')}
+    ]);
+    this.menuService.languages.set([
+      {title: 'English', flagClass: 'fis fi fi-us'},
+      {title: 'Russian', flagClass: 'fis fi fi-ru'},
+    ]);
   }
 }

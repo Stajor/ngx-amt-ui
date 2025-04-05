@@ -1,3 +1,19 @@
+Install tailwind
+https://tailwindcss.com/docs/installation/framework-guides/angular
+
+ng add @angular/material
+ng add @angular/localize
+npm i tailwind-scrollbar
+npm install material-icons
+
+Add in styles.scss
+@use "amt-ui/assets/styles/amt-ui";
+
+ng build amt-ui
+
+cd dist/amt-ui
+npm publish --access public
+
 # NgxAmtUi
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.1.
