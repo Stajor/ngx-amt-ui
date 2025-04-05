@@ -1,5 +1,5 @@
 import {Component, inject} from '@angular/core';
-import {AmtThemeService} from 'amt-ui';
+import {AmtThemeService} from '../../services/amt-theme.service';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 
