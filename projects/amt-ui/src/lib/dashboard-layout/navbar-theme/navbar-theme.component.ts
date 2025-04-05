@@ -1,0 +1,21 @@
+import {Component, inject} from '@angular/core';
+import {AmtThemeService} from 'amt-ui';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+
+@Component({
+  selector: 'amt-navbar-theme',
+  imports: [
+    MatButtonModule,
+    MatIconModule
+  ],
+  templateUrl: './navbar-theme.component.html',
+  styleUrl: './navbar-theme.component.css'
+})
+export class NavbarThemeComponent {
+  amtThemeService = inject(AmtThemeService);
+
+  toggleThemeMode() {
+    this.amtThemeService.mode = this.amtThemeService.mode == 'light' ? 'dark' : 'light';
+  }
+}

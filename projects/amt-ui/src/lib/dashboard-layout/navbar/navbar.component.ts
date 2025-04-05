@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import {AmtMenuService} from '../../services/amt-menu.service';
 import {NavbarProfileComponent} from '../navbar-profile/navbar-profile.component';
 import {NavbarLanguagesComponent} from '../navbar-languages/navbar-languages.component';
+import {NavbarThemeComponent} from '../navbar-theme/navbar-theme.component';
 
 @Component({
   selector: 'amt-navbar',
   imports: [
     NavbarProfileComponent,
-    NavbarLanguagesComponent
+    NavbarLanguagesComponent,
+    NavbarThemeComponent
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'

@@ -1,0 +1,5 @@
+<button mat-icon-button (click)="toggleThemeMode()">
+  <mat-icon class="text-muted-foreground/50">
+    {{amtThemeService.mode == 'dark' ? 'light_mode' : 'dark_mode'}}
+  </mat-icon>
+</button>
