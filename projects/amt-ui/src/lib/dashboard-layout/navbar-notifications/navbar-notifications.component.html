@@ -1,0 +1,31 @@
+<button mat-icon-button [matMenuTriggerFor]="menuNotifications">
+  <mat-icon class="text-muted-foreground/50">notifications
+  </mat-icon>
+</button>
+
+<mat-menu #menuNotifications="matMenu">
+  <div class="-m-3">
+    <div class="block px-4 py-2 font-medium text-center text-gray-700 rounded-t-lg bg-gray-50 dark:bg-gray-800 dark:text-white">
+      Notifications
+    </div>
+    <div class="divide-y divide-gray-100 dark:divide-gray-700">
+      @for (message of notifications; track message) {
+        <a href="#" class="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
+          <div class="flex-shrink-0">
+            <mat-icon class="text-muted-foreground/50">{{message.icon}}</mat-icon>
+          </div>
+          <div class="w-full ps-3">
+            <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400">{{message.message}}</div>
+            <div class="text-xs text-blue-600 dark:text-blue-500">{{message.time}}</div>
+          </div>
+        </a>
+      }
+    </div>
+    <a href="#" class="block py-2 text-sm font-medium text-center text-gray-900 rounded-b-lg bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white">
+      <div class="inline-flex items-center ">
+        <mat-icon class="w-4 h-4 me-2 text-gray-500 dark:text-gray-400">visibility</mat-icon>
+        View all
+      </div>
+    </a>
+  </div>
+</mat-menu>

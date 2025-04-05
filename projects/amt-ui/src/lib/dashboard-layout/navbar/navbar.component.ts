@@ -6,6 +6,7 @@ import {NavbarThemeComponent} from '../navbar-theme/navbar-theme.component';
 import {NavbarColorsComponent} from '../navbar-colors/navbar-colors.component';
 import {NavbarFullscreenComponent} from '../navbar-fullscreen/navbar-fullscreen.component';
 import {NavbarResponsiveComponent} from '../navbar-responsive/navbar-responsive.component';
+import {NavbarNotificationsComponent} from '../navbar-notifications/navbar-notifications.component';
 
 @Component({
   selector: 'amt-navbar',
@@ -15,7 +16,8 @@ import {NavbarResponsiveComponent} from '../navbar-responsive/navbar-responsive.
     NavbarThemeComponent,
     NavbarColorsComponent,
     NavbarFullscreenComponent,
-    NavbarResponsiveComponent
+    NavbarResponsiveComponent,
+    NavbarNotificationsComponent
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
