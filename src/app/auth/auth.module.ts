@@ -11,6 +11,7 @@ import {AuthLayoutComponent} from '../../../projects/amt-ui/src/lib/auth-layout/
   imports: [
     CommonModule,
     AuthRoutingModule,
+    AuthLayoutComponent,
     AuthLayoutComponent
   ]
 })

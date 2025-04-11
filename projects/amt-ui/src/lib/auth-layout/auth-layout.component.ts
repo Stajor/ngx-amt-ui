@@ -18,8 +18,8 @@ import {AmtThemeService} from '../services/amt-theme.service';
   styleUrl: './auth-layout.component.css'
 })
 export class AuthLayoutComponent {
-  logoUrl = input<string>('https://cdn.btretail.io/assets/images/full-logo.png');
-  bannerUrl = input<string>('https://cdn.btretail.io/assets/images/banner-bi.png');
+  logoUrl = input<string>();
+  bannerUrl = input<string>();
 
   constructor(public themeService: AmtThemeService) {}
 }
