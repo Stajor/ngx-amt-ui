@@ -33,7 +33,8 @@
               <div class="text-muted-foreground hover:text-primary flex h-[36px] cursor-pointer items-center justify-start rounded-sm"
                 routerLink="{{ item.route }}">
                 <a class="truncate text-xs font-semibold tracking-wide focus:outline-hidden"
-                   routerLinkActive="text-primary" [ngClass]="{hidden: !menuService.showSideBar()}">
+                   [ngClass]="{hidden: !menuService.showSideBar()}" routerLinkActive="text-primary"
+                   [routerLinkActiveOptions]="{exact: item.exact || false}">
                   {{ item.label }}
                 </a>
               </div>

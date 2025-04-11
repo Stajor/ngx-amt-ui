@@ -12,7 +12,7 @@ export class DashboardComponent {
   menuService: AmtMenuService = inject(AmtMenuService);
   pages: AmtMenuItem[] = [
     {separator: false, items: [
-      {label: 'Dashboard', icon: 'home', route: '/dashboard/analytics'},
+      {label: 'Dashboard', icon: 'home', route: '/dashboard/analytics', exact: true},
       {label: 'Auth', icon: 'lock', route: '/auth', children: [
         {label: 'Sign in', route: '/auth/login'},
         {label: 'Forgot Password', route: '/auth/forgot-password'}

@@ -12,6 +12,7 @@ export interface AmtSubMenuItem {
   route?: string | null;
   expanded?: boolean;
   active?: boolean;
+  exact?: boolean;
   children?: Array<AmtSubMenuItem>;
 }
 
