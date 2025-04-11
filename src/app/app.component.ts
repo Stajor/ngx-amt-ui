@@ -13,5 +13,6 @@ export class AppComponent {
     amtThemeService.title = 'example';
     amtThemeService.mode  = 'light';
     amtThemeService.color = 'yellow';
+    amtThemeService.logo = 'logo.png';
   }
 }

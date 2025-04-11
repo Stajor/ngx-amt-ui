@@ -3,6 +3,7 @@ export interface AmtTheme {
   mode: AmtThemeMode;
   color: AmtThemeColor;
   direction: AmtThemeDirection;
+  logo: string;
 }
 
 export type AmtThemeMode = 'dark' | 'light' | 'system';

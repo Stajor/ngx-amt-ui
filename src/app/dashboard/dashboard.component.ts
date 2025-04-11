@@ -11,7 +11,7 @@ import {AmtMenuService} from '../../../projects/amt-ui/src/lib/services/amt-menu
 export class DashboardComponent {
   menuService: AmtMenuService = inject(AmtMenuService);
   pages: AmtMenuItem[] = [
-    {group: 'Base', separator: false, items: [
+    {separator: false, items: [
       {label: 'Dashboard', icon: 'home', route: '/dashboard/analytics'},
       {label: 'Auth', icon: 'lock', route: '/auth', children: [
         {label: 'Sign in', route: '/auth/login'},

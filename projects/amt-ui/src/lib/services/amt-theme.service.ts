@@ -6,7 +6,7 @@ import {StorageService} from './storage.service';
   providedIn: 'root'
 })
 export class AmtThemeService {
-  public settings = signal<AmtTheme>({mode: 'dark', color: 'base', direction: 'ltr'});
+  public settings = signal<AmtTheme>({mode: 'dark', color: 'base', direction: 'ltr', logo: ''});
   private storage = inject(StorageService);
   private renderer: Renderer2 = inject(RendererFactory2).createRenderer(null, null);
 
@@ -23,6 +23,17 @@ export class AmtThemeService {
 
   get title(): string {
     return this.settings().title || '';
+  }
+
+  set logo(logo: string) {
+    this.settings.update((settings) => {
+      settings.logo = logo;
+      return settings;
+    });
+  }
+
+  get logo(): string {
+    return this.settings().logo || '';
   }
 
   set direction(direction: AmtThemeDirection) {

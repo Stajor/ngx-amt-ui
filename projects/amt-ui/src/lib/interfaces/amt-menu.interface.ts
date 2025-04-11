@@ -1,5 +1,5 @@
 export interface AmtMenuItem {
-  group: string;
+  group?: string;
   separator?: boolean;
   selected?: boolean;
   active?: boolean;
@@ -13,11 +13,6 @@ export interface AmtSubMenuItem {
   expanded?: boolean;
   active?: boolean;
   children?: Array<AmtSubMenuItem>;
-}
-
-export interface AmtProfile {
-  user: AmtProfileUser;
-  items: Array<AmtProfileItem>;
 }
 
 export interface AmtProfileUser {

@@ -3,7 +3,6 @@
  */
 /// <reference types="@angular/localize" />
 
-import '@angular/localize/init';
 export * from './lib/services/amt-theme.service';
 export * from './lib/services/amt-menu.service';
 export * from './lib/interfaces/amt-menu.interface';
