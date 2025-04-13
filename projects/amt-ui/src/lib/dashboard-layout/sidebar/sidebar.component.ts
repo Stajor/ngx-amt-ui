@@ -20,7 +20,4 @@ import {RouterModule} from '@angular/router';
 export class SidebarComponent {
   menuService: AmtMenuService = inject(AmtMenuService);
   themeService: AmtThemeService = inject(AmtThemeService);
-
-  constructor() {
-  }
 }
