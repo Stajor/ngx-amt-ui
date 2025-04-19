@@ -14,8 +14,8 @@
         <li>
           <!-- Menu List -->
           <div class="text-muted-foreground hover:text-foreground group relative flex grow items-center gap-4 rounded-lg px-2 hover:bg-card/50"
-               (click)="toggleMenu(item)" routerLinkActive="bg-primary/10"
-               [ngClass]="{'mb-1': !menuService.showSideBar()}">
+               (click)="toggleMenu(item)" [ngClass]="{'mb-1': !menuService.showSideBar()}"
+               routerLinkActive="bg-primary/10" [routerLinkActiveOptions]="{exact: item.exact || false}">
             <!-- Icon -->
             <div class="flex items-center text-muted-foreground/50"
                  [matTooltip]="menuService.showSideBar() ? null : item.label" matTooltipPosition="after">
