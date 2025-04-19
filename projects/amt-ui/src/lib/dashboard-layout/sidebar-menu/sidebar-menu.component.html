@@ -29,11 +29,10 @@
 
             <!-- Workaround:: Enable routerLink -->
             <ng-template #parentMenu let-item="item">
-              <div class="text-muted-foreground hover:text-primary flex h-[36px] cursor-pointer items-center justify-start rounded-sm"
-                [routerLink]="item.route">
+              <div class="text-muted-foreground hover:text-primary flex h-[36px] cursor-pointer items-center justify-start rounded-sm">
                 <a class="truncate text-sm font-medium tracking-wide focus:outline-hidden"
-                   [ngClass]="{hidden: !menuService.showSideBar()}" routerLinkActive="text-primary"
-                   [routerLinkActiveOptions]="{exact: item.exact || false}">
+                   [ngClass]="{hidden: !menuService.showSideBar()}" [routerLink]="item.route"
+                   routerLinkActive="text-primary" [routerLinkActiveOptions]="{exact: item.exact || false}">
                   {{ item.label }}
                 </a>
               </div>
