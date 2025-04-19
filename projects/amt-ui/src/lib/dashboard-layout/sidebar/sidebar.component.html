@@ -1,23 +1,25 @@
-<nav class="bg-background hidden h-full flex-col justify-between transition-all duration-300 md:flex"
-     [ngClass]="menuService.showSideBar() ? 'w-[210px] xl:w-[280px]' : 'w-[70px]'">
+<nav class="bg-background h-full flex-col justify-between transition-all duration-300 flex"
+     [ngClass]="menuService.showSideBar() ? 'w-[210px] xl:w-[280px]' : 'md:w-[70px] w-0'">
   <div class="overflow-hidden">
     <!-- Logo -->
-    <div class="mx-4 flex h-9 items-center h-[69px]"
-         [ngClass]="menuService.showSideBar() ? 'justify-between' : 'justify-center'">
-      @if (menuService.showSideBar()) {
-        <div class="flex items-center">
-          <a class="flex items-center justify-center rounded-sm p-2 focus:outline-hidden" routerLink="/">
-            <img class="max-w-[37px] max-h-[37px]" [src]="themeService.logo" [alt]="themeService.title" />
-          </a>
-          <b class="text-foreground ps-2 ml-1 grow text-sm font-bold">{{ themeService.title }}</b>
-        </div>
-      }
 
-      <button class="text-muted-foreground/50 hover:text-muted-foreground flex items-center justify-center rounded-md p-2 transition-all duration-200 focus:outline-hidden"
-        (click)="menuService.toggleSidebar()" [ngClass]="{ 'rotate-180': !menuService.showSideBar() }">
-        <mat-icon>keyboard_double_arrow_left</mat-icon>
-      </button>
-    </div>
+      <div class="mx-4 flex h-9 items-center h-[69px]"
+           [ngClass]="menuService.showSideBar() ? 'justify-between' : 'justify-center'">
+        @if (menuService.showSideBar()) {
+          <div class="flex items-center">
+            <a class="flex items-center justify-center rounded-sm p-2 focus:outline-hidden" routerLink="/">
+              <img class="max-w-[37px] max-h-[37px]" [src]="themeService.logo" [alt]="themeService.title" />
+            </a>
+            <b class="text-foreground ps-2 ml-1 grow text-sm font-bold">{{ themeService.title }}</b>
+          </div>
+        }
+
+        <button class="md:block hidden text-muted-foreground/50 hover:text-muted-foreground flex items-center justify-center rounded-md p-2 transition-all duration-200 focus:outline-hidden"
+                (click)="menuService.toggleSidebar()" [ngClass]="{ 'rotate-180': !menuService.showSideBar() }">
+          <mat-icon>keyboard_double_arrow_left</mat-icon>
+        </button>
+      </div>
+
 
     <!-- Menu Items -->
     <div class="scrollbar-thumb--sm scrollbar-track-rounded scrollbar-thin scrollbar-track-transparent scrollbar-thumb-card h-full overflow-auto px-4">

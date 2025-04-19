@@ -1,40 +1,21 @@
 <div class="bg-background relative">
-  <div class="mx-auto px-5">
-    <div class="flex items-center justify-between py-3.5 md:justify-start">
-      <!-- Mobile Navigation Menu Button-->
-      <div class="sm:order-1 md:hidden">
-        <button class="bg-muted text-muted-foreground focus:ring-primary hover:bg-muted-foreground hover:text-muted inline-flex items-center justify-center rounded-md p-2 focus:outline-hidden focus:ring-2 focus:ring-inset"
-          (click)="toggleMobileMenu()" type="button">
-          <span class="sr-only">Open menu</span>
-          <mat-icon>menu</mat-icon>
-        </button>
-      </div>
+  <div class="flex p-2">
+    <!-- Mobile Navigation Menu Button-->
+    <div class="block md:hidden">
+      <button mat-icon-button (click)="toggleMobileMenu()">
+        <mat-icon class="text-muted-foreground/50">menu</mat-icon>
+      </button>
+    </div>
 
-      <!-- Logo -->
-      <div class="flex items-center justify-start gap-3 sm:order-2 ltr:md:mr-10 rtl:md:ml-10 md:hidden">
-        <a class="flex items-center justify-center rounded-sm p-2 focus:outline-hidden focus:ring-1">
-          <img class="max-w-[25px] max-h-[25px]" [src]="themeService.logo" [alt]="themeService.title" />
-        </a>
-        <b class="text-foreground hidden text-sm font-bold sm:block">{{ themeService.title }}</b>
-      </div>
-
-      <!-- Desktop Menu -->
-      <div class="hidden space-x-10 sm:order-3 md:flex">
-<!--        <app-navbar-menu></app-navbar-menu>-->
-      </div>
-
-      <!-- Profile menu -->
-      <div class="items-center justify-end sm:order-4 md:flex md:flex-1 lg:w-0 space-x-1">
-        <amt-navbar-responsive />
-        <amt-navbar-colors />
-        <amt-navbar-fullscreen />
-        <amt-navbar-theme />
-        <amt-navbar-notifications />
-        <amt-navbar-languages />
-        <amt-navbar-profile />
-      </div>
+    <!-- Profile menu -->
+    <div class="flex-auto items-center justify-end flex space-x-1">
+      <amt-navbar-responsive />
+      <amt-navbar-colors />
+      <amt-navbar-fullscreen />
+      <amt-navbar-theme />
+      <amt-navbar-notifications />
+      <amt-navbar-languages />
+      <amt-navbar-profile class="mx-2" />
     </div>
   </div>
-  <!-- Mobile menu -->
-<!--  <app-navbar-mobile></app-navbar-mobile>-->
 </div>
