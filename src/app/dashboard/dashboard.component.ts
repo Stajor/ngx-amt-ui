@@ -22,7 +22,9 @@ export class DashboardComponent {
         {label: '500', route: '/errors/500'},
       ]},
     ]},
-    {group: 'Components', separator: true, items: []}
+    {group: 'Components', separator: true, items: [
+      {label: 'Buttons', icon: 'view_agenda', route: '/dashboard/buttons'},
+    ]}
   ];
 
   constructor() {
