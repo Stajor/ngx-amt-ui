@@ -24,6 +24,7 @@ export class DashboardComponent {
     ]},
     {group: 'Components', separator: true, items: [
       {label: 'Buttons', icon: 'view_agenda', route: '/dashboard/buttons'},
+      {label: 'Slides', icon: 'toggle_off', route: '/dashboard/slides'},
     ]}
   ];
 
