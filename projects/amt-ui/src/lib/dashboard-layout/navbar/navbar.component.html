@@ -1,21 +1,15 @@
-<div class="bg-background relative">
-  <div class="flex p-2">
-    <!-- Mobile Navigation Menu Button-->
-    <div class="block md:hidden">
-      <button mat-icon-button (click)="toggleMobileMenu()">
-        <mat-icon class="text-muted-foreground/50">menu</mat-icon>
-      </button>
-    </div>
+<div class="bg-background relative flex py-3 px-1">
+  <button mat-icon-button (click)="toggleMobileMenu()">
+    <mat-icon class="text-muted-foreground/50">menu</mat-icon>
+  </button>
 
-    <!-- Profile menu -->
-    <div class="flex-auto items-center justify-end flex space-x-1">
-      <amt-navbar-responsive />
-      <amt-navbar-colors />
-      <amt-navbar-fullscreen />
-      <amt-navbar-theme />
-      <amt-navbar-notifications />
-      <amt-navbar-languages />
-      <amt-navbar-profile class="mx-2" />
-    </div>
+  <div class="flex-auto items-center justify-end flex space-x-1">
+    <amt-navbar-responsive />
+    <amt-navbar-colors />
+    <amt-navbar-fullscreen />
+    <amt-navbar-theme />
+    <amt-navbar-notifications />
+    <amt-navbar-languages />
+    <amt-navbar-profile class="mx-2" />
   </div>
 </div>

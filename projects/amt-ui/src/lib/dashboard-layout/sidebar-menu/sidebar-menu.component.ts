@@ -5,6 +5,7 @@ import {AmtSubMenuItem} from '../../interfaces/amt-menu.interface';
 import {AmtMenuService} from '../../services/amt-menu.service';
 import {SidebarSubMenuComponent} from '../sidebar-sub-menu/sidebar-sub-menu.component';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @Component({
   selector: 'amt-sidebar-menu',
@@ -13,7 +14,8 @@ import {MatIconModule} from '@angular/material/icon';
     NgTemplateOutlet,
     RouterModule,
     SidebarSubMenuComponent,
-    MatIconModule
+    MatIconModule,
+    MatTooltipModule
   ],
   templateUrl: './sidebar-menu.component.html',
   styleUrl: './sidebar-menu.component.css'

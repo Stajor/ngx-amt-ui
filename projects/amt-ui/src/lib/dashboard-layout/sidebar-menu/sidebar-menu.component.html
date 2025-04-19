@@ -2,7 +2,7 @@
   <div>
     @if (menuService.showSideBar() && menu.group) {
       <div class="mx-1 flex items-center justify-between py-3">
-        <small [ngClass]="{hidden: !menuService.showSideBar()}" class="text-muted-foreground/50 text-xs font-semibold">
+        <small [ngClass]="{hidden: !menuService.showSideBar()}" class="text-muted-foreground/50 font-semibold">
           {{menu.group}}
         </small>
       </div>
@@ -13,13 +13,12 @@
       @for (item of menu.items; track item) {
         <li>
           <!-- Menu List -->
-          <div class="text-muted-foreground hover:text-foreground group relative flex grow items-center gap-4 rounded-lg px-2"
-               (click)="toggleMenu(item)" [ngClass]="{
-            'hover:bg-primary/10': !menuService.showSideBar() && item.active,
-            'hover:bg-card/50': !menuService.showSideBar()
-          }">
+          <div class="text-muted-foreground hover:text-foreground group relative flex grow items-center gap-4 rounded-lg px-2 hover:bg-card/50"
+               (click)="toggleMenu(item)" routerLinkActive="bg-primary/10"
+               [ngClass]="{'mb-1': !menuService.showSideBar()}">
             <!-- Icon -->
-            <div [ngClass]="item.active && !menuService.showSideBar() ? 'text-primary' : 'text-muted-foreground/50'">
+            <div class="flex items-center text-muted-foreground/50"
+                 [matTooltip]="menuService.showSideBar() ? null : item.label" matTooltipPosition="after">
               <mat-icon>{{ item.icon }}</mat-icon>
             </div>
 
@@ -31,8 +30,8 @@
             <!-- Workaround:: Enable routerLink -->
             <ng-template #parentMenu let-item="item">
               <div class="text-muted-foreground hover:text-primary flex h-[36px] cursor-pointer items-center justify-start rounded-sm"
-                routerLink="{{ item.route }}">
-                <a class="truncate text-xs font-semibold tracking-wide focus:outline-hidden"
+                [routerLink]="item.route">
+                <a class="truncate text-sm font-medium tracking-wide focus:outline-hidden"
                    [ngClass]="{hidden: !menuService.showSideBar()}" routerLinkActive="text-primary"
                    [routerLinkActiveOptions]="{exact: item.exact || false}">
                   {{ item.label }}
@@ -43,7 +42,7 @@
             <!-- Workaround:: Disable routerLink -->
             <ng-template #childMenu let-item="item">
               <div class="flex h-9 grow cursor-pointer items-center justify-start rounded-sm">
-                <a class="text-muted-foreground group-hover:text-primary truncate text-xs font-semibold tracking-wide focus:outline-hidden"
+                <a class="text-muted-foreground group-hover:text-primary truncate text-sm font-medium tracking-wide focus:outline-hidden"
                   [ngClass]="{hidden: !menuService.showSideBar()}">
                   {{ item.label }}
                 </a>
@@ -56,15 +55,6 @@
                 [ngClass]="{ hidden: !menuService.showSideBar() }">
                 <mat-icon>{{item.expanded ? 'keyboard_arrow_down' : 'keyboard_arrow_right'}}</mat-icon>
               </button>
-            }
-
-            <!-- Tooltip -->
-            @if (!menuService.showSideBar()) {
-              <div class="z-1 fixed h-[36px]">
-                <span class="z-1 bg-foreground text-background absolute w-auto min-w-max translate-y-[2px] scale-0 rounded-md p-2 text-xs font-bold shadow-md transition-all duration-200 group-hover:scale-100 ltr:origin-left ltr:translate-x-10 rtl:origin-right rtl:-translate-x-10">
-                  {{ item.label }}
-                </span>
-              </div>
             }
           </div>
 
