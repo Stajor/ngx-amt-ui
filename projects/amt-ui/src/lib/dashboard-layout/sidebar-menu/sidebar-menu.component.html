@@ -13,9 +13,10 @@
       @for (item of menu.items; track item) {
         <li>
           <!-- Menu List -->
-          <div class="text-muted-foreground hover:text-foreground group relative flex grow items-center gap-4 rounded-lg px-2 hover:bg-card/50"
-               (click)="toggleMenu(item)" [ngClass]="{'mb-1': !menuService.showSideBar()}"
-               routerLinkActive="bg-primary/10" [routerLinkActiveOptions]="{exact: item.exact || false}">
+          <a class="text-muted-foreground hover:text-foreground group relative flex grow items-center gap-4 rounded-lg px-2 hover:bg-card/50"
+             (click)="toggleMenu(item)" [ngClass]="{'mb-1': !menuService.showSideBar()}"
+             [routerLink]="item.children ? null : item.route" routerLinkActive="bg-primary/10"
+             [routerLinkActiveOptions]="{exact: item.exact || false}">
             <!-- Icon -->
             <div class="flex items-center text-muted-foreground/50"
                  [matTooltip]="menuService.showSideBar() ? null : item.label" matTooltipPosition="after">
@@ -30,11 +31,11 @@
             <!-- Workaround:: Enable routerLink -->
             <ng-template #parentMenu let-item="item">
               <div class="text-muted-foreground hover:text-primary flex h-[36px] cursor-pointer items-center justify-start rounded-sm">
-                <a class="truncate text-sm font-medium tracking-wide focus:outline-hidden"
-                   [ngClass]="{hidden: !menuService.showSideBar()}" [routerLink]="item.route"
-                   routerLinkActive="text-primary" [routerLinkActiveOptions]="{exact: item.exact || false}">
+                <span class="truncate text-sm font-medium tracking-wide focus:outline-hidden"
+                   [ngClass]="{hidden: !menuService.showSideBar()}" routerLinkActive="text-primary"
+                   [routerLinkActiveOptions]="{exact: item.exact || false}">
                   {{ item.label }}
-                </a>
+                </span>
               </div>
             </ng-template>
 
@@ -55,7 +56,7 @@
                 <mat-icon>{{item.expanded ? 'keyboard_arrow_down' : 'keyboard_arrow_right'}}</mat-icon>
               </button>
             }
-          </div>
+          </a>
 
           <!-- Submenu items -->
           <amt-sidebar-sub-menu [submenu]="item"></amt-sidebar-sub-menu>

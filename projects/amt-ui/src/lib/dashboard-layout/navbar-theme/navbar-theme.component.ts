@@ -16,6 +16,6 @@ export class NavbarThemeComponent {
   amtThemeService = inject(AmtThemeService);
 
   toggleThemeMode() {
-    this.amtThemeService.mode = this.amtThemeService.mode == 'light' ? 'dark' : 'light';
+    this.amtThemeService.toggleMode();
   }
 }

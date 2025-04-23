@@ -1,6 +1,7 @@
 import {inject, Injectable, Renderer2, RendererFactory2, signal} from '@angular/core';
 import {AmtTheme, AmtThemeColor, AmtThemeDirection, AmtThemeMode} from '../interfaces/amt-theme.inteface';
 import {StorageService} from './storage.service';
+import {Directionality} from '@angular/cdk/bidi';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,7 @@ import {StorageService} from './storage.service';
 export class AmtThemeService {
   public settings = signal<AmtTheme>({mode: 'dark', color: 'base', direction: 'ltr', logo: ''});
   private storage = inject(StorageService);
+  private dir = inject(Directionality);
   private renderer: Renderer2 = inject(RendererFactory2).createRenderer(null, null);
 
   constructor() {
@@ -76,8 +78,9 @@ export class AmtThemeService {
   }
 
   private loadDefaults() {
-    this.mode = this.storage.get('mode') || 'system';
-    this.color = this.storage.get('color') || 'base';
+    this.direction  = this.dir.value;
+    this.mode       = this.storage.get('mode') || 'system';
+    this.color      = this.storage.get('color') || 'base';
   }
 
   private updateHtmlClass(className: string): void {

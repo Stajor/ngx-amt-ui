@@ -23,9 +23,7 @@
 
           <!-- Child Menu -->
           <ng-template #childMenu let-sub="sub">
-            <a class="inline-block w-full cursor-pointer px-4 py-2 text-sm">
-              {{ sub.label }}
-            </a>
+            <a class="inline-block w-full cursor-pointer px-4 py-2 text-sm">{{ sub.label }}</a>
             <button class="text-foreground/50 flex cursor-pointer items-center justify-end px-2 transition-all duration-500"
                     [ngClass]="{ hidden: !menuService.showSideBar() }">
               <mat-icon>{{sub.expanded ? 'keyboard_arrow_down' : 'keyboard_arrow_right'}}</mat-icon>
