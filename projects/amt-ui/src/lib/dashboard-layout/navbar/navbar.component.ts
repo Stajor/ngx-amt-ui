@@ -9,6 +9,7 @@ import {NavbarResponsiveComponent} from '../navbar-responsive/navbar-responsive.
 import {NavbarNotificationsComponent} from '../navbar-notifications/navbar-notifications.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatIconButton} from '@angular/material/button';
+import {AmtThemeService} from '../../services/amt-theme.service';
 
 @Component({
   selector: 'amt-navbar',
@@ -28,6 +29,7 @@ import {MatIconButton} from '@angular/material/button';
 })
 export class NavbarComponent {
   menuService: AmtMenuService = inject(AmtMenuService);
+  themeService: AmtThemeService = inject(AmtThemeService);
 
   public toggleMobileMenu(): void {
     this.menuService.toggleSidebar();

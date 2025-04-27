@@ -4,12 +4,32 @@
   </button>
 
   <div class="flex-auto items-center justify-end flex space-x-1">
-    <amt-navbar-responsive />
-    <amt-navbar-colors />
-    <amt-navbar-fullscreen />
-    <amt-navbar-theme />
-    <amt-navbar-notifications />
-    <amt-navbar-languages />
-    <amt-navbar-profile class="mx-2" />
+    @if (themeService.navbarResponsive) {
+      <amt-navbar-responsive />
+    }
+
+    @if (themeService.navbarColors) {
+      <amt-navbar-colors />
+    }
+
+    @if (themeService.navbarFullscreen) {
+      <amt-navbar-fullscreen />
+    }
+
+    @if (themeService.navbarTheme) {
+      <amt-navbar-theme />
+    }
+
+    @if (themeService.navbarNotifications) {
+      <amt-navbar-notifications />
+    }
+
+    @if (themeService.navbarLanguages) {
+      <amt-navbar-languages />
+    }
+
+    @if (themeService.navbarProfile) {
+      <amt-navbar-profile class="mx-2" />
+    }
   </div>
 </div>

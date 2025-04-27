@@ -7,7 +7,19 @@ import {Directionality} from '@angular/cdk/bidi';
   providedIn: 'root'
 })
 export class AmtThemeService {
-  public settings = signal<AmtTheme>({mode: 'dark', color: 'base', direction: 'ltr', logo: ''});
+  public settings = signal<AmtTheme>({
+    mode: 'dark',
+    color: 'base',
+    direction: 'ltr',
+    logo: '',
+    navbarResponsive: true,
+    navbarColors: true,
+    navbarFullscreen: true,
+    navbarTheme: true,
+    navbarNotifications: true,
+    navbarLanguages: true,
+    navbarProfile: true
+  });
   private storage = inject(StorageService);
   private dir = inject(Directionality);
   private renderer: Renderer2 = inject(RendererFactory2).createRenderer(null, null);
@@ -75,6 +87,83 @@ export class AmtThemeService {
 
   get color(): string {
     return this.settings().color || '';
+  }
+
+  set navbarResponsive(show: boolean) {
+    this.settings.update((settings) => {
+      settings.navbarResponsive = show;
+      return settings;
+    });
+  }
+
+  get navbarResponsive() {
+    return this.settings().navbarResponsive;
+  }
+
+  set navbarColors(show: boolean) {
+    this.settings.update((settings) => {
+      settings.navbarColors = show;
+      return settings;
+    });
+  }
+
+  get navbarColors() {
+    return this.settings().navbarColors;
+  }
+
+  set navbarFullscreen(show: boolean) {
+    this.settings.update((settings) => {
+      settings.navbarFullscreen = show;
+      return settings;
+    });
+  }
+
+  get navbarFullscreen() {
+    return this.settings().navbarFullscreen;
+  }
+
+  set navbarTheme(show: boolean) {
+    this.settings.update((settings) => {
+      settings.navbarTheme = show;
+      return settings;
+    });
+  }
+
+  get navbarTheme() {
+    return this.settings().navbarTheme;
+  }
+
+  set navbarNotifications(show: boolean) {
+    this.settings.update((settings) => {
+      settings.navbarNotifications = show;
+      return settings;
+    });
+  }
+
+  get navbarNotifications() {
+    return this.settings().navbarNotifications;
+  }
+
+  set navbarLanguages(show: boolean) {
+    this.settings.update((settings) => {
+      settings.navbarLanguages = show;
+      return settings;
+    });
+  }
+
+  get navbarLanguages() {
+    return this.settings().navbarLanguages;
+  }
+
+  set navbarProfile(show: boolean) {
+    this.settings.update((settings) => {
+      settings.navbarProfile = show;
+      return settings;
+    });
+  }
+
+  get navbarProfile() {
+    return this.settings().navbarProfile;
   }
 
   private loadDefaults() {

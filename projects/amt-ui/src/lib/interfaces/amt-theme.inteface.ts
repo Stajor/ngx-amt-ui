@@ -1,9 +1,16 @@
 export interface AmtTheme {
   title?: string;
+  logo: string;
   mode: AmtThemeMode;
   color: AmtThemeColor;
   direction: AmtThemeDirection;
-  logo: string;
+  navbarResponsive: boolean;
+  navbarColors: boolean;
+  navbarFullscreen: boolean;
+  navbarTheme: boolean;
+  navbarNotifications: boolean;
+  navbarLanguages: boolean;
+  navbarProfile: boolean;
 }
 
 export type AmtThemeMode = 'dark' | 'light' | 'system';
